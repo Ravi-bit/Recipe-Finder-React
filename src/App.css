@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  display:block;
 }
 
 .App-logo {
@@ -36,3 +37,142 @@
     transform: rotate(360deg);
   }
 }
+
+.search{
+  margin-top:20px;
+  width:15%;
+  border-radius:2px;
+  border-bottom:1px;
+  border-right:1px;
+  border-color: lightgray;
+  text-align:center;
+  padding:12px;
+  border-radius:10px;
+  font-size:19px;
+  font-weight: lighter;
+  font-family: 'Roboto', sans-serif;
+  outline:none;
+}
+.heading{
+  font-size:45px;
+  margin-top:10px;
+  font-family:'Ubuntu', sans-serif;
+  color:rgb(99, 76, 76);
+}
+.info{
+  font-family: 'Ubuntu', sans-serif;
+  margin:0px;
+  font-weight: bolder;
+}
+.para{
+  margin-top:30px;
+  font-size:24px;
+  font-weight:bold;
+  font-family: 'Balsamiq Sans', cursive;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.blackColor{
+  color: black;
+  font-size:30px;
+  float:right;
+  margin-right:3%;
+  cursor:pointer;
+}
+.redColor{
+  color:red;
+  font-weight: bold;
+  font-size:30px;
+  float:right;
+  margin-right:3%;
+  cursor:pointer;
+}
+.btn{
+  margin-left:30px;
+  padding-top:14px;
+  padding-bottom: 12px;
+  font-weight: lighter;
+  font-size: 13px;
+  outline: blue;
+}
+.space{
+  margin-left: 30px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
+.box{
+  display:inline-block;
+  width:96%;
+  flex-wrap: wrap;
+  background-color:rgba(248, 232, 255, 0.863);
+  margin-top:25px;
+  height:50%;
+}
+.box-heading{
+  background-color:rgb(243, 231, 217);
+  padding:5px;
+}
+.box-header{
+  margin:3px;
+  font-family: 'Work Sans', sans-serif;
+  font-size:35px;
+  color:rgb(138, 105, 105);
+  font-weight: 550;
+}
+.content{
+  display:flex;
+  flex-direction:row;
+}
+.image-area{
+  width:40%;
+  height:60%;
+}
+.Meal-image{
+  margin-top:5%;
+  margin-left:10%;
+  margin-bottom: 5%;
+  float:left;
+  width:70%;
+  height:50%;
+  border:3px solid black;
+}
+.RecipeList{
+  display: table;
+  height: auto;
+  width:60%;
+  margin-top:2%;
+}
+.Meal-list{
+  text-align:left;
+}
+.Ingredient-box{
+  margin-top: 1%;
+  height:490%;
+  background-color: lightgray;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.Ingredient-list{
+  display:table;
+  margin-top:4%;
+  height: 100%;
+  text-align: left;
+  margin-bottom: 26%;
+  width:93%;
+}
+.info-last{
+  margin-top: 10%;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bolder;
+}
+.Instruction-list{
+  width:97%;
+  margin-bottom: 4%;
+}
+.Instruction-box{
+  font-family: 'Work Sans', sans-serif;
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+
