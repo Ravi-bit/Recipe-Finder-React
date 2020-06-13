@@ -21,80 +21,86 @@ class App extends Component {
       RedLoveIcon:false,
       IconColor:""
     }
-  }
-  
-  searchHandler= e =>{
+}
+
+//Function for update the state of search
+searchHandler= e =>{
       this.setState({search : e.target.value});
-  }
-  inputHandler = e =>{
+}
+
+//This function add some functionality to the input
+inputHandler = e =>{
     this.setState({times:1});
     e.target.value = e.target.defaultValue;
     this.setState({search:""});
     //console.log("input "+this.state.times);
-  }
-  ingredientHandler = ()=>{
+}
+
+//Function that make Http request
+ingredientHandler = ()=>{
     //console.log("Before if:"+this.state.times);
     if(this.state.search && this.state.times<=1){
       var xhr=new XMLHttpRequest();
       var text ="";
       let that=this;
-      let url= "https://www.themealdb.com/api/json/v1/1/search.php?s="+this.state.search;
+      let url= "https://www.themealdb.com/api/json/v1/1/search.php?s="+this.state.search; //This is the link to make API call 
       xhr.open("GET",url,true);
       xhr.send();
       xhr.onreadystatechange=function(){
         if(this.readyState===4 && this.status===200){
-          //console.log(typeof(JSON.parse(this.responseText).meals));
-         // console.log(JSON.parse(this.responseText));
-             if(JSON.parse(this.responseText).meals!==null){
-               var ingredient=JSON.parse(this.responseText).meals[0];
-               let Ing=true;
-               let i=1;
-               let j=1;
-               let duplicateMeals=[];
-               while(Ing){
-                 let a=  "strIngredient"+i;
-                 let b= "strMeasure"+j;
-                  if((ingredient.hasOwnProperty(a) && ingredient[a] !== null && ingredient[a] !== "")&&(ingredient.hasOwnProperty(b) && ingredient[b] !== null && ingredient[b] !== "")){
-                     //console.log(ingredient[a]);
-                    //console.log(ingredient[b]);
-                    duplicateMeals.push(ingredient[a]+" ---- "+ingredient[b]);
-                    i++;
-                    j++;
-                  }
-                  else{
+              //console.log(typeof(JSON.parse(this.responseText).meals));
+             // console.log(JSON.parse(this.responseText));
+              if(JSON.parse(this.responseText).meals!==null){
+                var ingredient=JSON.parse(this.responseText).meals[0];
+                let Ing=true;
+                let i=1;
+                let j=1;
+                let duplicateMeals=[];
+                while(Ing){
+                    let a=  "strIngredient"+i;
+                    let b= "strMeasure"+j;
+                    if((ingredient.hasOwnProperty(a) && ingredient[a] !== null && ingredient[a] !== "")&&(ingredient.hasOwnProperty(b) && ingredient[b] !== null && ingredient[b] !== "")){
+                      //console.log(ingredient[a]);
+                     //console.log(ingredient[b]);
+                     duplicateMeals.push(ingredient[a]+" ---- "+ingredient[b]);
+                     i++;
+                     j++;
+                    }
+                    else{
                     Ing=false;
-                  }
-               }
-               that.setState({IconColor:"blackColor"});
-               //console.log("In API call:"+that.state.IconColor);
-               that.setState({times:2});
-               that.setState({RedLoveIcon:true});
-               that.setState({BlackLoveIcon:false});
-               that.setState({showReceived:true});
-               that.setState({showNotReceived:false});
-               that.setState({ingredients:duplicateMeals});
-               that.setState({showPara: text});
-               that.setState({ Dish: JSON.parse(this.responseText).meals[0].strMeal});
-               that.setState({ category : JSON.parse(this.responseText).meals[0].strCategory});
-               that.setState({area : JSON.parse(this.responseText).meals[0].strArea});
-               that.setState({image: JSON.parse(this.responseText).meals[0].strMealThumb});
-               that.setState({instructions: JSON.parse(this.responseText).meals[0].strInstructions});
-               //console.log("In API "+that.state.times);   
-             }
-             else{
-              that.setState({times:2});
-              that.setState({BlackLoveIcon:true});
-              that.setState({RedLoveIcon:false});
-              that.setState({IconColor:"blackColor"});
-              that.setState({showReceived:false});
-              that.setState({showNotReceived:true});
-              that.setState({showPara: "No data has been received"});
+                    }
+                }
+                that.setState({IconColor:"blackColor"});
+                that.setState({times:2});
+                that.setState({RedLoveIcon:true});
+                that.setState({BlackLoveIcon:false});
+                that.setState({showReceived:true});
+                that.setState({showNotReceived:false});
+                that.setState({ingredients:duplicateMeals});
+                that.setState({showPara: text});
+                that.setState({Dish: JSON.parse(this.responseText).meals[0].strMeal});
+                that.setState({category : JSON.parse(this.responseText).meals[0].strCategory});
+                that.setState({area : JSON.parse(this.responseText).meals[0].strArea});
+                that.setState({image: JSON.parse(this.responseText).meals[0].strMealThumb});
+                that.setState({instructions: JSON.parse(this.responseText).meals[0].strInstructions});  
+              }
+              else{
+                that.setState({times:2});
+                that.setState({BlackLoveIcon:true});
+                that.setState({RedLoveIcon:false});
+                that.setState({IconColor:"blackColor"});
+                that.setState({showReceived:false});
+                that.setState({showNotReceived:true});
+                that.setState({showPara: "No data has been received"});
              } 
         }
       };
     }
-  }
-  iconcolorHandler = () =>{
+}
+
+
+  //Function for handling the colour of a icon
+iconcolorHandler = () =>{
     //console.log("outside "+this.state.IconColor)
     if(this.state.IconColor==="blackColor" && this.state.RedLoveIcon){
            this.setState({IconColor:"redColor"});
@@ -108,7 +114,7 @@ class App extends Component {
       this.setState({BlackLoveIcon: false}); 
       //console.log("Inside2 "+this.state.IconColor);
     }
-  }
+}
 render(){
   return (
     <div className="App">
