@@ -148,7 +148,7 @@ render(){
                  <div className="Instruction-list">
                       <span className="info-last">Recipes</span>
                       <div className="Instruction-box">
-                           <div style={{margin:10}}>{this.state.instructions}</div>
+                           <div style={{margin:13}}>{this.state.instructions}</div>
                       </div>
                  </div>  
            </div>
