@@ -74,6 +74,7 @@
 
 .blackColor{
   color: black;
+  font-weight: bold;
   font-size:30px;
   float:right;
   margin-right:3%;
@@ -81,7 +82,7 @@
 }
 .redColor{
   color:red;
-  font-weight: bold;
+  font-weight: bolder;
   font-size:30px;
   float:right;
   margin-right:3%;
@@ -102,7 +103,7 @@
 }
 .box{
   display:inline-block;
-  width:96%;
+  width:95%;
   flex-wrap: wrap;
   background-color:rgba(248, 232, 255, 0.863);
   margin-top:25px;
@@ -147,17 +148,19 @@
 }
 .Ingredient-box{
   margin-top: 1%;
-  height:490%;
+  height:150px;
   background-color: lightgray;
   overflow-y: scroll;
   overflow-x: hidden;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
 }
 .Ingredient-list{
   display:table;
   margin-top:4%;
-  height: 100%;
+  height: 250px;
   text-align: left;
-  margin-bottom: 26%;
+  margin-bottom: 1%;
   width:93%;
 }
 .info-last{
@@ -166,13 +169,20 @@
   font-weight: bolder;
 }
 .Instruction-list{
+  display:table;
+  margin-top:1%;
+  height: 200px;
   width:97%;
   margin-bottom: 4%;
 }
 .Instruction-box{
   font-family: 'Work Sans', sans-serif;
-  background-color: lightgray;
   font-weight: bold;
+  margin-top: 1%;
+  height:200px;
+  background-color: lightgray;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 
