@@ -131,7 +131,7 @@ render(){
             <header>
                 <div className="box-heading">
                   <span className="box-header">{this.state.Dish}</span>
-                  <span onClick={this.iconcolorHandler}  className={this.state.IconColor}>&#9825;</span>
+                  <span onClick={this.iconcolorHandler}  className={this.state.IconColor}> &#9825;</span>
                 </div>
             </header>
           <div className="content">
